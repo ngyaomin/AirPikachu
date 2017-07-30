@@ -60,7 +60,6 @@ Rails.application.configure do
     port: 587,
     enable_starttls_auto: true,
     authentication: 'plain',
-    user_name: 'airpikachutestingonly@gmail.com',
-    password: ENV["gmail_secret"]
+    user_name: 'ngyaominsg@gmail.com'
   }
 end
