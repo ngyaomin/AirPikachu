@@ -19,7 +19,7 @@ class User < ApplicationRecord
         user.fullname = auth.info.name
         user.image = auth.info.image
         user.uid = auth.uid
-        user.provier = auth.provider
+        user.provider = auth.provider
 
         # If you are using confirmable and the provider(s) you use validate emails,
         # uncomment the line below to skip the confirmation emails.
