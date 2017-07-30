@@ -2,6 +2,47 @@
 @import "bootstrap";
 @import "toastr";
 
+body {
+  color: #565a5c;
+  background-color: #f8f8f8;
+  font-family: "varela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+a {
+  color: #00A699
+}
+
+.container {
+  width: 80%;
+}
+
+.text-babu, .icon-babu {
+  color: #00A699;
+}
+
+.navbar-default {
+  background-color: #ffffff;
+}
+
+.navbar-default .navbar-brand {
+  color: #ff5a5f;
+  font-size: 2em;
+  font-weight: 400
+}
+
+.btn-block {
+  display: block;
+  white-space: normal;
+  width: 100%
+}
+
+.btn {
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 9px 27px;
+}
+
 .avatar_small {
   width: 28px;
 }
