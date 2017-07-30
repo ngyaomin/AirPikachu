@@ -61,6 +61,7 @@ Rails.application.configure do
     enable_starttls_auto: true,
     authentication: 'plain',
     user_name: 'airpikachutestingonly@gmail.com',
-    password: 'ENV["gmail_secret"]'
+    password: ENV["gmail_secret"],
+    enable_starttls_auto: true
   }
 end
