@@ -18,6 +18,9 @@ class RoomController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def listing
   end
 
