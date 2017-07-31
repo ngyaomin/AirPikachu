@@ -37,6 +37,12 @@ class RoomController < ApplicationController
   end
 
   def update
+    if @room.update(room_params)
+      flash[:notice] = "updated"
+    else
+      flash[:notice] = "Update fails"
+    end
+    redirect_back(fallback_location: request.referer)
   end
 
   private
