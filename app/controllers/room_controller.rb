@@ -1,5 +1,6 @@
 class RoomController < ApplicationController
   def index
+    @rooms = current_user.rooms
   end
 
   def new
@@ -9,6 +10,7 @@ class RoomController < ApplicationController
   end
 
   def listing
+    @room = Room.find(params[:id])
   end
 
   def pricing
