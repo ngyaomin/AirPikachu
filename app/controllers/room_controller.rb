@@ -10,13 +10,15 @@ class RoomController < ApplicationController
   end
 
   def listing
-    @room = Room.find(params[:id])
+    set_room
   end
 
   def pricing
+    set_room
   end
 
   def description
+    set_room
   end
 
   def photo_upload
@@ -30,4 +32,9 @@ class RoomController < ApplicationController
 
   def update
   end
+
+  private
+    def set_room
+      @room = Room.find(params[:id])
+    end
 end
