@@ -11,6 +11,11 @@ class RoomController < ApplicationController
 
   def create
     @room = current_user.rooms.build(room_params)
+    if @room.save
+      redirect_to listing_room_path(@room), notice: "saved"
+    else
+      render :new, notice: "Something went wrong"
+    end
   end
 
   def listing
