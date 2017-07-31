@@ -1,4 +1,6 @@
 class RoomController < ApplicationController
+  before_action :set_room, except: [:index, :new, :create]
+
   def index
     @rooms = current_user.rooms
   end
@@ -10,15 +12,12 @@ class RoomController < ApplicationController
   end
 
   def listing
-    set_room
   end
 
   def pricing
-    set_room
   end
 
   def description
-    set_room
   end
 
   def photo_upload
