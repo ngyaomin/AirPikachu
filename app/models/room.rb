@@ -3,7 +3,7 @@ class Room < ApplicationRecord
   has_many :photos
 
   geocoded_by :address
-  after_validation:  :geocode, if: :address_changed?
+  after_validation :geocode, if: :address_changed?
 
   validates :home_type, presence: true
   validates :room_type, presence: true

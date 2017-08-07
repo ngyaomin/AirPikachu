@@ -132,8 +132,14 @@
         <script src="https://maps.googleapis.com/maps/api/js"></script>
         <script>
           function initalize() {
-            
+            var location = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              center: location,
+              zoom: 14
+            });
           }
+
+          google.map.event.addDomListener(window, 'load', initialize);
         </script>
 
       </div>
