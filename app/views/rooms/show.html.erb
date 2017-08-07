@@ -91,7 +91,8 @@
     <!-- Carosel -->
     <div class="row">
 
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <% if @photos.length > 0 %>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
           <% @photos.each do |photo| %>
@@ -118,6 +119,7 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+      <% end %>
 
     </div>
     <hr/>
