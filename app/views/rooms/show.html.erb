@@ -70,15 +70,15 @@
           <div class="row">
             <div class="col-md-6">
               <ui class="amenities">
-                <li>TV</li>
-                <li>Kitchen</li>
-                <li>Internet</li>
+                <li class="<%= 'text-line-through' if !@room.is_tv %>">TV</li>
+                <li class="<%= 'text-line-through' if !@room.is_kitchen %>">Kitchen</li>
+                <li class="<%= 'text-line-through' if !@room.is_internet %>">Internet</li>
               </ui>
             </div>
             <div class="col-md-6">
               <ui class="amenities">
-                <li>Heating</li>
-                <li>Air Con</li>
+                <li class="<%= 'text-line-through' if !@room.is_heating %>">Heating</li>
+                <li class="<%= 'text-line-through' if !@room.is_air %>">Air Con</li>
               </ui>
             </div>
 
