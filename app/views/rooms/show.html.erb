@@ -167,12 +167,10 @@
               </div>
               <div class="panel-body">
                 <%= link_to room.listing_name, room %><br/>
-                (<%= room.distance.round %>)
+                (<%= room.distance.round(2) %> miles away)
               </div>
-
             </div>
           </div>
-
         <% end %>
       </div>
 
