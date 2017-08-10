@@ -7,8 +7,14 @@ class ReservationsController < ApplicationController
     end_date = Date.parse(reservation_params[:end_date])
     days = (end_date - start_date).to_i + 1
 
-    @reservation = current_user.reservation.build(reservation_params)
+    @reservation = current_user.reservations.build(reservation_params)
+    @reservation.room = room
+    @reservation.price = room.price
+    @reservation.total = room.price * days
+    @reservation.save
 
+    flash[:notice] = "Success Booking"
+    redirect_to room
   end
 
   private
