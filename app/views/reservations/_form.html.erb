@@ -15,6 +15,26 @@
           <%= f.text_field :end_date, readonly: true, placeholder: "end date", class: "form-control datepicker" %>
         </div>
       </div>
+
+      <div id="preview">
+        <table class="reservation-table">
+          <tbody>
+            <tr>
+              <td>Price</td>
+              <td class="text-right">SGD$<%= @room.price %></td>
+            </tr>
+            <tr>
+              <td>Night(s)</td>
+              <td class="text-right">x 10</td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td class="text-right">SGD$ 1000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <br/>
 
       <%= f.submit "Book Now", class: "btn btn-normal btn-block" %>
