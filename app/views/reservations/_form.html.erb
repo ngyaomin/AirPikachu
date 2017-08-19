@@ -98,13 +98,12 @@
                   $('#preview').show();
                   $('#btn_book').attr('disabled', false);
 
-                  var total = nights *  <%= @room.price %>
+                  var total = nights * <%= @room.price %>
                   $('#reservation_nights').text(nights);
                   $('#reservation_total').text(total);
                 }
               }
             });
-          }
 
           }
         });
@@ -140,7 +139,7 @@
                   $('#preview').show();
                   $('#btn_book').attr('disabled', false);
 
-                  var total = nights *  <%= @room.price %>
+                  var total = nights * <%= @room.price %>
                   $('#reservation_nights').text(nights);
                   $('#reservation_total').text(total);
                 }
@@ -150,5 +149,8 @@
         });
       }
     });
+
+
+
   });
 </script>
