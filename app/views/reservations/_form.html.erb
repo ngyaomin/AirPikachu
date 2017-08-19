@@ -76,6 +76,7 @@
             $('#reservation_end_date').attr("disabled", false);
           }
         });
+
         $('#reservation_end_date').datepicker({
           dateFormat: 'dd-mm-yy',
           minDate: 0,
@@ -94,7 +95,7 @@
 
             $.ajax({
               url: '<%= preview_room_path(@room) %>',
-              date: input,
+              data: input,
               success: function(data) {
 
                 if(data.conflict) {
@@ -106,7 +107,6 @@
                   $('#preview').show();
                   $('#btn_book').attr('disabled', false);
                 }
-
               }
             });
           }
