@@ -96,7 +96,17 @@
               url: '<%= preview_room_path(@room) %>',
               date: input,
               success: function(data) {
-                
+
+                if(data.conflict) {
+                  $('#message').text("These dates are not available");
+                  $('#preview').hide();
+                  $('#btn_book').attr('disabled', true);
+                } else {
+                  $('#message').text("");
+                  $('#preview').show();
+                  $('#btn_book').attr('disabled', false);
+                }
+
               }
             });
           }
