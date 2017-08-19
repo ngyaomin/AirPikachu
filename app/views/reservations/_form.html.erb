@@ -26,7 +26,7 @@
             </tr>
             <tr>
               <td>Night(s)</td>
-              <td class="text-right">x <span id="reservation_days"></span></td>
+              <td class="text-right">x <span id="reservation_nights"></span></td>
             </tr>
             <tr>
               <td class="total">Total</td>
@@ -87,6 +87,7 @@
 
             var start_date = $('#reservation_start_date').datepicker('getDate');
             var end_date = $('#reservation_end_date').datepicker('getDate');
+            var nights = (end_date - start_date)/1000/60/60/24 + 1;
 
             var input = {
               'start_date': start_date,
@@ -106,6 +107,10 @@
                   $('#message').text("");
                   $('#preview').show();
                   $('#btn_book').attr('disabled', false);
+
+                  var total = nights *  <%= @room.price %>
+                  $('#reservation_nights').text(nights);
+                  $('#reservation_total').text(total);
                 }
               }
             });
