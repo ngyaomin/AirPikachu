@@ -16,6 +16,7 @@
         </div>
       </div>
 
+      <h4><span id="message"></span></h4>
       <div id="preview" style="display: none">
         <table class="reservation-table">
           <tbody>
@@ -37,7 +38,7 @@
 
       <br/>
 
-      <%= f.submit "Book Now", class: "btn btn-normal btn-block" %>
+      <%= f.submit "Book Now", id: "btn_book" class: "btn btn-normal btn-block", disabled: true %>
     <% end %>
   </div>
 </div>
@@ -82,6 +83,22 @@
           beforeShowDay: checkDate,
           onSelect: function(selected) {
             $('#reservation_start_date').datepicker("option", "maxDate", selected);
+
+            var start_date = $('#reservation_start_date').datepicker('getDate');
+            var end_date = $('#reservation_end_date').datepicker('getDate');
+
+            var input = {
+              'start_date': start_date,
+              'end_date': end_date
+            }
+
+            $.ajax({
+              url: '<%= preview_room_path(@room) %>',
+              date: input,
+              success: function(data) {
+                
+              }
+            });
           }
         });
       }
