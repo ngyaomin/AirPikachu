@@ -67,6 +67,11 @@ class RoomsController < ApplicationController
   end
 
   private
+    def is_conflict(start_date, end_date, room)
+      check = room.reservations.where("? < start_date AND end_date < ?", start_date, end_date)
+      check.size > 0? true : false
+    end
+
     def set_room
       @room = Room.find(params[:id])
     end
