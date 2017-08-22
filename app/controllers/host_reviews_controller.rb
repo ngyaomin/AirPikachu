@@ -15,11 +15,17 @@ class HostReviewController < ApplicationController
                         guest_id: host_review_params[:guest_id]
                       ).first
 
+      if @has_reviewed.nil?
+        @host_review = current_user.host_reviews.create(host_review_params)
+        flash[:success] = "Review Created"
+      else
+        flash[:success] = "You reviewed already"
+      end
+
     else
       flash[:alert] = "Reservation not found"
     end
 
-    @host_review = current_user.host_reviews.create(host_review_params)
     redirect_back(fallback_location: request.referer)
   end
 
