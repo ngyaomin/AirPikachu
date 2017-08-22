@@ -1,6 +1,24 @@
 class HostReviewController < ApplicationController
 
   def create
+
+    @reservation = Reservation.where(
+                    id: host_review_params[:reservation_id],
+                    room_id: host_review_params[:room_id],
+                    user_id: host_review_params[:guest_id]
+                   ).first
+
+    if !@reservation.nil?
+
+      @has_reviewed = HostReview.where(
+                        reservation_id: @reservation.id,
+                        guest_id: host_review_params[:guest_id]
+                      ).first
+
+    else
+      flash[:alert] = "Reservation not found"
+    end
+
     @host_review = current_user.host_reviews.create(host_review_params)
     redirect_back(fallback_location: request.referer)
   end
