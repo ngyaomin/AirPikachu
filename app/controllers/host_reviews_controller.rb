@@ -1,4 +1,4 @@
-class HostReviewController < ApplicationController
+class HostReviewsController < ApplicationController
 
   def create
 
