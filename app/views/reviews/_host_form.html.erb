@@ -1,10 +1,10 @@
 <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-normal" data-toggle="modal" data-target="#myModal">
+<button type="button" class="btn btn-normal" data-toggle="modal" data-target="#myModal_<%= reservation.id %>">
   Review Your Guest
 </button>
 
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="myModal_<%= reservation.id %>" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
