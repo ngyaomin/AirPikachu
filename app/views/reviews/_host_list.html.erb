@@ -24,13 +24,12 @@
       <div><%= r.created_at.strftime("%v") %></div>
       <div><%= r.comment %></div>
     </div>
+    <script>
+      $('#star_<%= r.id %>').raty({
+        path: '/assets',
+        readonly: true,
+        score: <%= r.star >
+      });
+    </script>
   <% end %>
 <% end %>
-
-<script>
-  $('#star_<%= r.id %>').raty({
-    path: '/assets',
-    readonly: true,
-    score: <%= r.star %>
-  });
-</script>
