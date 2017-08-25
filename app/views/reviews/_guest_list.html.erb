@@ -1,0 +1,7 @@
+<% if guest_reviews.count == 0 %>
+  <div class="text-center">
+    <h4>There are no reviews yet</h4>
+  </div>
+<% else %>
+  <% @guest_reviews.order(id: :desc) %>
+<% end %>
