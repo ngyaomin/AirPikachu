@@ -11,7 +11,7 @@
         <strong><%= r.guest.fullname %></strong>
       </div>
       <div class="col-md-9">
-        <div><%= r.star %></div>
+        <div id="star_<%= r.id %>"></div>
 
         <% if current_user && current_user == r.guest %>
           <span class="pull-right">
@@ -26,3 +26,11 @@
     </div>
   <% end %>
 <% end %>
+
+<script>
+  $('#star_<%= r.id %>').raty({
+    path: '/assets',
+    readonly: true,
+    score: <%= r.star %>
+  });
+</script>
