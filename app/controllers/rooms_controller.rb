@@ -25,6 +25,7 @@ class RoomsController < ApplicationController
 
   def show
     @photos = @room.photos
+    @guests_reviews = @room.guests_reviews
   end
 
   def listing
