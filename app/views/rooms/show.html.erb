@@ -192,10 +192,17 @@
 
   </div>
 
-
   <!-- right panel -->
   <div class="col-md-4">
     <!-- reservation form -->
     <%= render 'reservations/form' %>
   </div>
 </div>
+
+<script>
+  $('#average_rating').raty({
+    path: '/assets',
+    readonly: true,
+    score: <%= @room.average_rating %>
+  });
+</script>
