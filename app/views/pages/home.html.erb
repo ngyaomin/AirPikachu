@@ -44,7 +44,6 @@
     dateFormat: 'dd-mm-yy',
     minDate: 0,
     maxDate: '3m',
-    beforeShowDay: checkDate,
     onSelect: function(selected) {
       $('#end_date').datepicker("option", "minDate", selected);
       $('#end_date').attr("disabled", false);
@@ -55,7 +54,6 @@
     dateFormat: 'dd-mm-yy',
     minDate: 0,
     maxDate: '3m',
-    beforeShowDay: checkDate,
     onSelect: function(selected) {
       $('#start_date').datepicker("option", "minDate", selected);
     }
