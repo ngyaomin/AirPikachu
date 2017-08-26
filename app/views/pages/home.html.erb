@@ -21,6 +21,9 @@
 
 <br/><hr/><br/>
 
+<div><h3>Homes</h3></div>
+<br/>
+
 <div class="row">
   <% @rooms.each do |room| %>
     <div class="col-md-4">
@@ -35,3 +38,16 @@
     </div>
   <% end %>
 </div>
+
+<script>
+  $('#start_date').datepicker({
+    dateFormat: 'dd-mm-yy',
+    minDate: 0,
+    maxDate: '3m',
+    beforeShowDay: checkDate,
+    onSelect: function(selected) {
+      $('#end_date').datepicker("option", "minDate", selected);
+      $('#end_date').attr("disabled", false);
+    }
+  });
+</script>
