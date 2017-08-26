@@ -50,4 +50,14 @@
       $('#end_date').attr("disabled", false);
     }
   });
+
+  $('#end_date').datepicker({
+    dateFormat: 'dd-mm-yy',
+    minDate: 0,
+    maxDate: '3m',
+    beforeShowDay: checkDate,
+    onSelect: function(selected) {
+      $('#start_date').datepicker("option", "minDate", selected);
+    }
+  });
 </script>
