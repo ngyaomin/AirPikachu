@@ -1,0 +1,26 @@
+<div id="main">
+  <div id="left">
+    <div class="row">
+      <br/>
+      <div class="collaspe" id="collapsePanel">
+
+        <%= search_form_for @search, url: search_path do |f| %>
+
+          <div class="row">
+            <div class="col-md-8">
+              <label>Price range:</label>
+            </div>
+            <div class="col-md-2">
+              <label>Min Price:</label>
+              <%= f.text %>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div id="right">
+
+  </div>
+</div>
