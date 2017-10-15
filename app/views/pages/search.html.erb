@@ -12,7 +12,7 @@
       <br/>
       <div class="collaspe" id="collapsePanel">
 
-        <%= search_form_for @search, url: search_path do |f| %>
+        <%= search_form_for @search, url: search_path, remote: true do |f| %>
 
           <div class="row">
             <div class="col-md-8">
@@ -107,19 +107,8 @@
       </div>
       <br/>
 
-      <div class="row">
-        <% @arrRooms.each do |room| %>
-          <div class="col-md-4">
-            <div class="panel panel-default">
-              <div class="panel-heading preview">
-                <%= image_tag room.cover_photo(:medium) %>
-              </div>
-              <div class="panel-body">
-                <%= link_to room.listing_name, room %>
-              </div>
-            </div>
-          </div>
-        <% end %>
+      <div class="row" id="room_listing">
+        <%= render partial: "rooms/rooms_list", locals: {rooms: @arrRooms} %>
       </div>
 
     </div>
