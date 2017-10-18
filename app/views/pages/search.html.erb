@@ -56,7 +56,7 @@
           <div class="row">
             <div class="col-md-4">
               <div class="form-group select">
-                <label>Accomodate</label>
+                <label>Accommodate</label>
                   <%= f.select :accommodate_gteq, [["1", 1], ["2", 2],
                   ["3", 3], ["4 or more", 4]],
                                 id: "accommodate", prompt: "Select...", class: "form-control" %>
@@ -117,11 +117,11 @@
 
   <div id="right">
 
-    <div class="map" style="width: 100%; height: 100%">
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHEGv5447zEgJX0I2GKKEUwfAUGUXIUHM/js"></script>
+    <div id="map" style="width: 100%; height: 100%"></div>
+      <script src="https://maps.googleapis.com/maps/api/js"></script>
       <script>
         function initialize(rooms) {
-          var location = {lat: 56.5403, lng: -96.5463}
+          var location = {lat: 24.4996, lng: 121.2780}
 
           if (rooms.length > 0) {
             location = {lat: rooms[0].latitude, lng: rooms[0].longitude }
@@ -129,7 +129,7 @@
 
           var map = new google.maps.Map(document.getElementById('map'), {
             center: location,
-            zoom: 12
+            zoom: 8
           });
 
           var marker, inforwindow;
@@ -153,7 +153,6 @@
         });
 
       </script>
-    </div>
   </div>
 </div>
 
