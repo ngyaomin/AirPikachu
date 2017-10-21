@@ -17,7 +17,22 @@
       </div>
     </div>
   </div>
+
   <div class="col-md-9">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Notifications</div>
+      <div class="panel-body">
+
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Your Listings (<%= @rooms.length %>)</div>
+      <div class="panel-body">
+        <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>
+      </div>
+    </div>
 
   </div>
 </div>
