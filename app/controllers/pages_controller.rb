@@ -1,3 +1,5 @@
+# this is a testing
+
 class PagesController < ApplicationController
   def home
     @rooms = Room.where(active: true).limit(3)
