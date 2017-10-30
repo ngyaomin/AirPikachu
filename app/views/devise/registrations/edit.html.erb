@@ -20,10 +20,6 @@
             </div>
 
             <div class="form-group">
-              <%= f.text_field :phone_number, autofocus: true, placeholder: "Phone Number", class: "form-control" %>
-            </div>
-
-            <div class="form-group">
               <%= f.text_area :description, rows: 5, cols: 25, autofocus: true, placeholder: "Description", class: "form-control" %>
             </div>
 
@@ -46,6 +42,26 @@
             <div class="actions">
               <%= f.submit "Save", class: "btn btn-normal btn-block" %>
             </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <br/>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Your Phone Number</div>
+      <div class="panel-body">
+        <div class="container">
+          <% if !current_user.phone_number.bank? %>
+            <h4><%= current_user.phone_number %></h4>
+            <button class="btn btn-default" data-toggle="modal" data-target="#update-phone">Update</button>
+            <% if current_user.phone_verified == false %>
+              <button class="btn btn-default" data-toggle="modal" data-target="#verify-phone">Verify</button>
+            <% end %>
+          <% else %>
+            <button class="btn btn-default" data-toggle="modal" data-target="#add-phone">Add Phone</button>
+
           <% end %>
         </div>
       </div>
