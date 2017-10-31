@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def verify_phone_number
-    current_user.verify_pin(params(:user)[:pin])
+    current_user.verify_pin(params[:user][:pin])
 
     if current_user.phone_verified
       flash[:notice] = "Your phone number is verified."

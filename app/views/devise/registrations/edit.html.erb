@@ -104,12 +104,12 @@
       </div>
 
       <div class="modal-body">
-        <%= form_for current_user, url: verify_phone_number_user_path(current_user) do |f| %>
+        <%= form_for current_user, url: verify_phone_number_user_path(current_user), method: :post do |f| %>
           <div class="form-group">
-            <%= f.phone_field :pin, class: "form-control", placeholder: "Your Pin Number" %>
+            <%= f.text_field :pin, class: "form-control", placeholder: "Your Pin Number", value: "" %>
           </div>
           <div class="text-center">
-            <%= f.submit "Save", class: "btn btn-normal" %>
+            <%= f.submit "Verify", class: "btn btn-normal" %>
           </div>
         <% end %>
       </div>
