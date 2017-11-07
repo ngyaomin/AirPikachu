@@ -11,7 +11,7 @@
 
       <div class="panel-body">
         <div class="container">
-          
+
           <%= form_for @room do |f| %>
             <div class="row">
               <div class="col-md-4 select">
@@ -31,6 +31,14 @@
                                 id: "room_type", prompt: "Select...", class: "form-control" %>
                 </div>
               </div>
+
+              <div class="col-md-4 select">
+                <div class="form-group">
+                  <label>Booking Type</label>
+                  <%= f.select :instant, Room.instants.map {|key.value| [key.humanize, key]}, selected: 'Instant' prompt: "Select...", class: "form-control" %>
+                </div>
+              </div>
+
 
               <div class="col-md-4 select">
                 <div class="form-group">
