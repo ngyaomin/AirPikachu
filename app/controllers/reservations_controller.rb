@@ -26,8 +26,6 @@ class ReservationsController < ApplicationController
       else
         flash[:alert] = "Error making reservations"
       end
-
-      flash[:notice] = "Success Booking"
     end
     redirect_to room
   end

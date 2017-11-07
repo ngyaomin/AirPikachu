@@ -1,6 +1,6 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <span><i class="fa fa-bolt" style="color:#ffb400"></i> SGD$<%= @room.price %></span>
+    <span><% if @room.Instant? %><i class="fa fa-bolt" style="color:#ffb400"></i> <% end %> SGD$<%= @room.price %></span>
     <span class="pull-right">Per Night</span>
   </div>
   <div class="panel-body">
